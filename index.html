@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>UIST 2026</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Limelight&display=swap">
+    <script src="https://social.wiki/init.js"></script>
+    <style>
+      :root {
+        --uist-gold: #cea665;
+        --wikify-accent: var(--uist-gold);
+        --wikify-accent-hover: color-mix(in srgb, var(--uist-gold) 80%, black);
+      }
+
+      #wikify {
+        --wikify-interactive-color: light-dark(#79531b, var(--uist-gold));
+      }
+
+      #wikify > header {
+        background: light-dark(rgb(255 255 255 / .94), rgb(27 29 32 / .94));
+        border-bottom-color: var(--uist-gold);
+        backdrop-filter: blur(8px);
+      }
+      #wikify > header h1 {
+        font-family: Limelight, serif;
+        font-weight: 400;
+      }
+      #wikify > header h1 a,
+      #wikify > header h1 a:visited {
+        color: light-dark(#79531b, var(--uist-gold));
+      }
+      #wikify .wikify-primary-action {
+        color: #211a10;
+      }
+    </style>
+    <script type="module">
+      if (window.top !== window) {
+        const { wikify } = await import("https://social.wiki/wikify.js");
+        wikify({
+          siteName: "acm:sigchi:uist:2026",
+          admins: [
+            "did:plc:numtqzbw74lmrguyvpzq6uf5", // Theia Henderson
+            "did:plc:indzvhtehvlcmit34vhwzer7", // Ryan Yen
+          ],
+          showHeader(query) {
+            // Only show the header on root routes
+            return !window.route.parseQuery(query).address;
+          },
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wikify">Loading…</div>
+  </body>
+</html>
