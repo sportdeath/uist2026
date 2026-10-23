@@ -40,6 +40,10 @@
         const { wikify } = await import("https://social.wiki/wikify.js");
         wikify({
           siteName: "acm:sigchi:uist:2026",
+          editingGuidelines: [
+            "Please keep your changes scoped to one specific feature or fix at a time. Larger changes will not be endorsed unless discussed with the admins ahead of time.",
+            "Please check your changes with multiple screen sizes. We expect most people will be using the site on mobile.",
+          ],
           admins: [
             "did:plc:numtqzbw74lmrguyvpzq6uf5", // Theia Henderson
             "did:plc:indzvhtehvlcmit34vhwzer7", // Ryan Yen
